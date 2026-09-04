@@ -1,0 +1,36 @@
+# By Dhiru Bhai
+# Cryptography and Cyber Security Lab – Lab 1
+
+This lab contains implementations of classical cryptographic techniques using **Java**.
+
+## Ciphers Implemented
+
+### 1. Caesar Cipher
+
+* Encrypts the message using a fixed **offset/shift**.
+* Decrypts the ciphertext to recover the original message.
+
+### 2. Playfair Cipher
+
+* Uses a **5 × 5 key matrix** for encryption.
+* Encrypts and decrypts the message using Playfair rules.
+
+### 3. Hill Cipher
+
+* Uses **matrix multiplication** and a key matrix for encryption.
+* Uses the inverse key matrix for decryption.
+
+### 4. Vigenère Cipher
+
+* Uses a **keyword** to encrypt the message.
+* The same key is used to decrypt the ciphertext.
+
+## Technologies Used
+
+* **Language:** Java
+* **Concept:** Classical Cryptography
+* **Operations:** Encryption and Decryption
+
+## Objective
+
+To understand and implement different classical cipher techniques and demonstrate how plaintext is converted into ciphertext and then recovered through decryption.
