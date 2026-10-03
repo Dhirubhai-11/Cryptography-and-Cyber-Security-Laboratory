@@ -1,0 +1,35 @@
+# RSA Algorithm
+
+This experiment demonstrates the implementation of the RSA (Rivest–Shamir–Adleman) algorithm using HTML and JavaScript.
+
+# Implementation
+  Language: HTML, JavaScript
+  Algorithm: RSA
+  Type: Asymmetric Encryption
+  Input: Two prime numbers and a message
+  Output: Public key, exponent, private key, and cipher text
+
+ # Working
+
+The program takes two prime numbers p and q and calculates:
+
+n = p × q
+φ(n) = (p − 1) × (q − 1)
+Selects a public exponent e
+Calculates the private key d
+
+# The message is then encrypted using:
+
+C = M^e mod n
+
+where M is the message and C is the cipher text.
+
+# Example
+p = 53
+q = 59
+Message = 89
+
+Public Key = 3127
+Exponent = 3
+Private Key = 2011
+Cipher Text = 1394
