@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSA Algorithm</title>
+
+    <style>
+        body {
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+
+        input {
+            width: 300px;
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        table {
+            margin: auto;
+            text-align: left;
+            font-size: 20px;
+        }
+
+        td {
+            padding: 6px;
+        }
+
+        button {
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>RSA Algorithm</h1>
+<h2>Implemented Using HTML & Javascript</h2>
+
+<table>
+    <tr>
+        <td>Enter First Prime Number:</td>
+        <td><input type="number" id="p"></td>
+    </tr>
+
+    <tr>
+        <td>Enter Second Prime Number:</td>
+        <td><input type="number" id="q"></td>
+    </tr>
+
+    <tr>
+        <td>
+            Enter the Message(cipher text):<br>
+            [A=1, B=2,...]
+        </td>
+        <td><input type="number" id="message"></td>
+    </tr>
+
+    <tr>
+        <td>Public Key:</td>
+        <td id="publicKey"></td>
+    </tr>
+
+    <tr>
+        <td>Exponent:</td>
+        <td id="exponent"></td>
+    </tr>
+
+    <tr>
+        <td>Private Key:</td>
+        <td id="privateKey"></td>
+    </tr>
+
+    <tr>
+        <td>Cipher Text:</td>
+        <td id="cipherText"></td>
+    </tr>
+
+    <tr>
+        <td colspan="2" style="text-align:center;">
+            <button onclick="applyRSA()">Apply RSA</button>
+        </td>
+    </tr>
+</table>
+
+<script>
+
+function gcd(a, b) {
+    while (b != 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+function modInverse(e, phi) {
+    for (let d = 1; d < phi; d++) {
+        if ((e * d) % phi == 1) {
+            return d;
+        }
+    }
+}
+
+function powerMod(base, exponent, modulus) {
+    let result = 1;
+
+    for (let i = 0; i < exponent; i++) {
+        result = (result * base) % modulus;
+    }
+
+    return result;
+}
+
+function applyRSA() {
+
+    let p = parseInt(document.getElementById("p").value);
+    let q = parseInt(document.getElementById("q").value);
+    let message = parseInt(document.getElementById("message").value);
+
+    let n = p * q;
+
+    let phi = (p - 1) * (q - 1);
+
+    let e = 2;
+
+    while (e < phi) {
+        if (gcd(e, phi) == 1) {
+            break;
+        }
+        e++;
+    }
+
+    let d = modInverse(e, phi);
+
+    let cipher = powerMod(message, e, n);
+
+    document.getElementById("publicKey").innerHTML = n;
+    document.getElementById("exponent").innerHTML = e;
+    document.getElementById("privateKey").innerHTML = d;
+    document.getElementById("cipherText").innerHTML = cipher;
+}
+
+</script>
+
+</body>
+</html>
