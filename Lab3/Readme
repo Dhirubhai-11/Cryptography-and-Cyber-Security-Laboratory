@@ -1,0 +1,13 @@
+# DES(Data Decryption Standard) Algorithm
+
+DES is a symmetric-key block cipher that uses the same secret key for encryption and decryption.
+
+# Implementation
+Language: Java
+Algorithm: DES
+Mode: ECB
+Padding: PKCS5Padding
+Key: Generated using Java KeyGenerator
+Operation: Encryption and Decryption
+
+The program encrypts a sample message using a randomly generated DES key and then decrypts the ciphertext using the same key to recover the original message.
