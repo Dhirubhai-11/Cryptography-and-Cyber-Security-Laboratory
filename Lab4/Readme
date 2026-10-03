@@ -1,0 +1,15 @@
+# AES(Advanced Encryption Standard) Algorithm
+
+AES is a symmetric-key encryption algorithm widely used for protecting data.
+
+Implementation
+Language: Java
+Algorithm: AES
+Mode: ECB
+Padding: PKCS5Padding
+Key: Generated from a secret string using SHA-1
+Key Size: 128-bit
+Encoding: Base64
+Operation: Encryption and Decryption
+
+The program encrypts a sample URL using a secret key and then decrypts it to obtain the original URL.
